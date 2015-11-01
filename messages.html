@@ -1,0 +1,48 @@
+<template name="invictus_message">
+    <div id="invictus_flash_messages"></div>
+    <div id="invictus_messages">
+        <div class="modal-backdrop fade in"></div>
+    </div>
+</template>
+
+<template name="invictus_flash">
+    <div id="invictus_flash" class="alert {{type}}" role="alert">
+        {{#if hasTitle}}
+            <h4>{{title}}</h4>
+        {{/if}}
+        {{ message }}
+    </div>
+</template>
+
+<template name="invictus_alert">
+    <div id="invictus_alert" class="alert {{icon}} fade in">
+        {{#if closeable}}
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{/if}}
+        <h4>{{{title}}}</h4>
+        <p>{{{message}}}</p>
+        <p>
+            {{#each getButtons buttons}}
+                {{> UI.dynamic template=button_template}}
+            {{/each}}
+        </p>
+    </div>
+</template>
+
+<template name="invictus_buttons_1">
+    <button type="button" class="btn btn-default btn-ok">OK</button>
+</template>
+
+<template name="invictus_buttons_2">
+    <button type="button" class="btn btn-default btn-yes">Ja</button>
+</template>
+
+<template name="invictus_buttons_4">
+    <button type="button" class="btn btn-default btn-no">Nein</button>
+</template>
+
+<template name="invictus_buttons_8">
+    <button type="button" class="btn btn-default btn-cancel">Abbrechen</button>
+</template>
