@@ -38,18 +38,34 @@ Msg.Flash = {
         }, 5000);
     },
 
+    /**
+     * @param {String} message
+     * @param {String} title
+     */
     error: function (message, title) {
         this.message(message, title, 'alert-danger');
     },
 
+    /**
+     * @param {String} message
+     * @param {String} title
+     */
     warning: function (message, title) {
         this.message(message, title, 'alert-warning');
     },
 
+    /**
+     * @param {String} message
+     * @param {String} title
+     */
     info: function (message, title) {
         this.message(message, title, 'alert-info');
     },
 
+    /**
+     * @param {String} message
+     * @param {String} title
+     */
     success: function (message, title) {
         this.message(message, title, 'alert-success');
     },

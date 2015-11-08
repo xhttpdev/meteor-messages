@@ -14,6 +14,9 @@ Msg = {
     WARNING: 'alert-warning',
     ERROR: 'alert-danger',
 
+    /**
+     * @param {Object} options
+     */
     alert: function (options) {
         var me = this;
 
@@ -58,6 +61,59 @@ Msg = {
         $('#invictus_messages').show();
     },
 
+    /**
+     * @param {String} message
+     * @param {String} title
+     * @param {Function} callback
+     */
+    info: function (message, title, callback) {
+        var options = {
+            buttons: Msg.OK,
+            icon: Msg.QUESTION
+        };
+
+        options = _.extend(options, this.getOptions(message, title, callback));
+
+        this.alert(options);
+    },
+
+    /**
+     * @param {String} message
+     * @param {String} title
+     * @param {Function} callback
+     */
+    warning: function (message, title, callback) {
+        var options = {
+            buttons: Msg.OK,
+            icon: Msg.WARNING
+        };
+
+        options = _.extend(options, this.getOptions(message, title, callback));
+
+        this.alert(options);
+    },
+
+    /**
+     * @param {String} message
+     * @param {String} title
+     * @param {Function} callback
+     */
+    error: function (message, title, callback) {
+        var options = {
+            buttons: Msg.OK,
+            icon: Msg.ERROR
+        };
+
+        options = _.extend(options, this.getOptions(message, title, callback));
+
+        this.alert(options);
+    },
+
+    /**
+     * @param {String} message
+     * @param {String} title
+     * @param {Function} callback
+     */
     dialog: function (message, title, callback) {
         this.alert({
             title: title,
@@ -71,6 +127,30 @@ Msg = {
     close: function () {
         Blaze.remove(this.view);
         $('#invictus_messages').hide();
+    },
+
+    /**
+     * @private
+     *
+     * @param {String} message
+     * @param {String} title
+     * @param {Object} callback
+     * @return {Object}
+     */
+    getOptions: function (message, title, callback) {
+        var options = {
+            message: message
+        };
+
+        if (title !== undefined) {
+            options.title = title;
+        }
+
+        if (callback !== undefined) {
+            options.callback = callback;
+        }
+
+        return options;
     }
 };
 
