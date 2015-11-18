@@ -70,7 +70,9 @@ Msg.Flash = {
         this.message(message, title, 'alert-success');
     },
 
-    /**+
+    /**
+     * @private
+     *
      * @param {Number} duration
      */
     close: function (duration) {

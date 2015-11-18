@@ -1,6 +1,6 @@
 Package.describe({
     name: 'invictus:messages',
-    version: '0.9.1',
+    version: '0.9.3',
     // Brief, one-line summary of the package.
     summary: 'Boostrap Messages',
     // URL to the Git repository containing the source code for this package.
