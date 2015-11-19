@@ -9,6 +9,12 @@ Based on Twitter Boostrap Theme.
     
 # Usage #
 
+Add Template to `body`
+
+    <body>
+        {{> invictus_message}}
+    </body>
+
 ## Alerts ##
 
     Msg.alert({
