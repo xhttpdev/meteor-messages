@@ -1,6 +1,6 @@
 Package.describe({
     name: 'invictus:messages',
-    version: '0.9.3',
+    version: '0.10.0',
     // Brief, one-line summary of the package.
     summary: 'Boostrap Messages',
     // URL to the Git repository containing the source code for this package.
@@ -11,11 +11,11 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-    api.versionsFrom('1.2.0.2');
+    api.versionsFrom('1.4.1');
 
     api.use([
         'templating',
-        'fourseven:scss@3.2.0',
+        'fourseven:scss@3.8.0_1',
         'jquery@1.11.4'
     ]);
 
